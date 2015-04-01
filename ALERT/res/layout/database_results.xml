@@ -1,0 +1,65 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent" 
+    tools:context="com.example.alert.DatabaseResult" >
+
+    <TextView
+        android:id="@+id/textViewDatabaseResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Database Results"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewNHSNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NHS Number"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextNHSNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" 
+        >     
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textViewMedicalHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MedicalHistory"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editMedicalHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+        android:inputType="text"
+        />
+
+    <TextView
+        android:id="@+id/textViewAllergies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allergies"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextAlergies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+        android:inputType="text"
+        />
+
+</LinearLayout>

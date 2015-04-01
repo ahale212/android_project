@@ -1,43 +1,95 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" tools:context="com.ALERT.alert.Login"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.android.com/apk/res/android
-http://schemas.android.com/apk/res/android
-http://schemas.android.com/tools
-http://schemas.android.com/apk/res/android ">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.alert.Login" >
 
-    <TextView android:id="@+id/login_title" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_centerHorizontal="true"
-        android:text="@string/hello_world" />
+    
 
-    <EditText android:id="@+id/login_username" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_below="@+id/login_title"
-        android:layout_centerHorizontal="true" android:layout_marginTop="73dp" android:ems="10"
-        android:inputType="textPersonName" android:text="Username">
+    <TextView
+        android:id="@+id/textViewUserID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editTextPass"
+        android:layout_alignBottom="@+id/editTextPass"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="1dp"
+        android:layout_toLeftOf="@+id/editTextUserID"
+        android:text="@+string/UserID" />
+
+  
+
+    <TextView
+        android:id="@+id/textViewPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewUserID"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/editTextUserID"
+        android:layout_marginLeft="1dp"
+        android:text="@+string/Password" />
+    
+
+    <EditText
+        android:id="@+id/editTextPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewPass"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="62dp"
+        android:layout_marginRight="1dp"
+        android:layout_toRightOf="@+id/textViewUserID"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="5"
+        android:cursorVisible="true"
+        android:gravity="left" />
+
+  
+
+    <EditText
+        android:id="@+id/editTextUserID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Login"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="48dp"
+        android:layout_marginRight="1dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:gravity="left" >
 
         <requestFocus />
     </EditText>
 
-    <EditText android:id="@+id/login_password" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_below="@+id/login_username"
-        android:layout_centerHorizontal="true" android:layout_marginTop="43dp" android:ems="10"
-        android:inputType="textPassword|textVisiblePassword" android:text="Password" />
+    
 
-    <Button android:id="@+id/login" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_below="@+id/login_password"
-        android:layout_centerHorizontal="true" android:layout_marginTop="92dp"
-        android:text="Login" />
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:text="@+string/Login" />
 
-    <CheckBox android:id="@+id/checkBox1" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_alignLeft="@+id/login_password"
-        android:layout_below="@+id/login_password" android:layout_marginTop="16dp"
-        android:text="Remember me" />
+ 
 
-    <CheckedTextView android:id="@+id/createAccount" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/login_title" android:text="create account" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:paddingLeft="1dp"
+        android:paddingTop="1dp"
+        android:text="@+string/WelcomeToALERT"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
