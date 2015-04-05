@@ -1,7 +1,12 @@
 package com.example.alert;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 
 public class Splash extends Activity {
 
@@ -25,6 +30,16 @@ public class Splash extends Activity {
 				}
 			}
 		};
+		
+		ImageView img_animation = (ImageView) findViewById(R.id.imageViewAmbulance);
+		 
+		  TranslateAnimation animation = new TranslateAnimation(000.0f, 200.0f,
+		    0.0f, 0.0f);
+		  animation.setDuration(2000);
+		  animation.setRepeatCount(5);
+		  animation.setRepeatMode(2);
+		  animation.setFillAfter(true);
+		  img_animation.startAnimation(animation);
 		timer.start();
 		//siren.start();
 	}
