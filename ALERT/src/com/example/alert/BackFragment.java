@@ -120,6 +120,14 @@ public class BackFragment extends Fragment {
 		bm = (Body_Model) activity;
 	}
 	
+	public void onResume() {
+		super.onResume();
+		
+		for (String i : backParts) {
+		changePicture("back", i, false);
+		}
+	};
+	
 	public void changePicture(String view, String part,  Boolean UpdateCount) {
 
 		int count = 2;

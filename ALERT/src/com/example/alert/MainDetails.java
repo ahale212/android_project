@@ -108,7 +108,6 @@ public class MainDetails {
 			db.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
 			onCreate(db);
 		}
-
 	}
 
 	public MainDetails(Context c) {
@@ -123,6 +122,12 @@ public class MainDetails {
 
 	public void close() {
 		ourHelper.close();
+	}
+	
+	public boolean deleteEntry(int key){
+		String keyVal =""+key;
+		
+		return ourDatabase.delete(DATABASE_TABLE, KEY_ROWID +" = " + keyVal, null) > 0;
 	}
 
 	public long createEntry(ArrayList<String> patientDetails, ArrayList<Integer> bodyPartCounts, int key_ID) {

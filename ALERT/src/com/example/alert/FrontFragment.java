@@ -114,7 +114,15 @@ public class FrontFragment extends Fragment {
 		});
 		return mRelativeLayout;
 	}
-
+	
+	public void onResume() {
+		super.onResume();
+		
+		for (String i : frontParts) {
+		changePicture("front", i, false);
+		}
+	};
+	
 	@Override
 	public void onAttach(Activity activity) {
 

@@ -8,9 +8,19 @@
         android:id="@+id/BtAddPatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
         android:text="@string/DD_add" />
+    
+    <Button
+        android:id="@+id/BtClearPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/DD_clear" />
 
     <Button
         android:id="@+id/BtAlertHospital"

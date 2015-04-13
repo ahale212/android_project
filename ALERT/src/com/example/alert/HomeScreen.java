@@ -160,8 +160,10 @@ public class HomeScreen extends ActionBarActivity {
 		ArrayList<Integer> keys;
 		ArrayList<String> Details;
 		
+		
 		listDataHeader = new ArrayList<String>();
 		listDataChild = new HashMap<String, List<String>>();
+		
 		
 
 		MainDetails dataBase = new MainDetails(this);
@@ -183,6 +185,7 @@ public class HomeScreen extends ActionBarActivity {
 					for (int j = 2; j < Details.size(); j++) {
 						OtherDetails.add(Details.get(j));
 					}
+					
 					listDataChild.put(listDataHeader.get(i), OtherDetails);
 				}
 

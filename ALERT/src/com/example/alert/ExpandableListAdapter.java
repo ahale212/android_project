@@ -12,7 +12,8 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
-
+	
+String[] fieldNames = {"Forename : ","Surname : ","DOB : ","NHS :\nnumber","Medical :\nHistory","Allergies :"};
 	
 	private Context _context;
     private List<String> _listDataHeader; // header titles
@@ -43,17 +44,24 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             boolean isLastChild, View convertView, ViewGroup parent) {
  
         final String childText = (String) getChild(groupPosition, childPosition);
- 
+        
+        //final String childTextName = (String) getChild(groupPosition, childPosition);
+        
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.patient_data_items, null);
         }
  
+        TextView txtListChildName = (TextView) convertView.findViewById(R.id.lblListItemName);
+        
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.lblListItem);
  
+        txtListChildName.setText(fieldNames[childPosition]);
+        
         txtListChild.setText(childText);
+        
         return convertView;
     }
  
