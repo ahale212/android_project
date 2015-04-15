@@ -19,7 +19,7 @@ public class MainDetails {
 	public static final String KEY_SURNAME = "surname";
 	public static final String KEY_DOB = "dob";
 	public static final String KEY_NHSNUM = "nhsNum";
-	public static final String KEY_MEDICALHISTORY = "medical_history";
+	public static final String KEY_BLOOD_TYPE = "blood_type";
 	public static final String KEY_ALLERGIES = "allergies";
 	
 	public static final String KEY_counthead 			= "counthead";
@@ -43,7 +43,7 @@ public class MainDetails {
 	private static final String DATABASE_TABLE = "peopleTable";
 	private static final int DATABASE_VERSION = 1;
 	
-	private String[] keys_Details = {KEY_ROWID,KEY_TITLE,KEY_FIRSTNAME,KEY_SURNAME,KEY_DOB,KEY_NHSNUM,KEY_MEDICALHISTORY,KEY_ALLERGIES};
+	private String[] keys_Details = {KEY_ROWID,KEY_TITLE,KEY_FIRSTNAME,KEY_SURNAME,KEY_DOB,KEY_NHSNUM,KEY_BLOOD_TYPE,KEY_ALLERGIES};
 	private String[] keys_Body = {KEY_ROWID,KEY_counthead,KEY_countBackhead,KEY_countneck,KEY_countBackneck,KEY_countchest,KEY_countback,KEY_countgroin,
 			KEY_countbum,KEY_countleftarm,KEY_countBackleftarm,KEY_countrightarm,KEY_countBackrightarm,KEY_countrightleg,KEY_countBackrightleg,
 			KEY_countleftleg,KEY_countBackleftleg};
@@ -76,7 +76,7 @@ public class MainDetails {
 					+ KEY_SURNAME 			+ " TEXT NOT NULL, " 
 					+ KEY_DOB 				+ " TEXT NOT NULL, " 
 					+ KEY_NHSNUM 			+ " TEXT NOT NULL, "
-					+ KEY_MEDICALHISTORY 	+ " TEXT NOT NULL, "
+					+ KEY_BLOOD_TYPE 		+ " TEXT NOT NULL, "
 					+ KEY_ALLERGIES 		+ " TEXT NOT NULL, "
 					
 					+ KEY_counthead 		+ " INTEGER NOT NULL, "
@@ -128,6 +128,11 @@ public class MainDetails {
 		String keyVal =""+key;
 		
 		return ourDatabase.delete(DATABASE_TABLE, KEY_ROWID +" = " + keyVal, null) > 0;
+	}
+	
+	public void deleteAll()
+	{
+		ourDatabase.delete(DATABASE_TABLE,null,null);
 	}
 
 	public long createEntry(ArrayList<String> patientDetails, ArrayList<Integer> bodyPartCounts, int key_ID) {

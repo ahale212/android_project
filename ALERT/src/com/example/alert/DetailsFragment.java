@@ -5,9 +5,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +24,8 @@ public class DetailsFragment extends Fragment {
 
 	RelativeLayout mRelativeLayout;
 	
-	Button update, view;
-	EditText title, firstName, surname, dob, nhsNum, mh, allergies;
+	Button update, view, QueryDB;
+	EditText title, firstName, surname, dob, nhsNum, bloodGroup, allergies;
 
 	Body_Model bm;
 	
@@ -32,13 +36,14 @@ public class DetailsFragment extends Fragment {
 
 		
 		view = (Button) mRelativeLayout.findViewById(R.id.buttonView);
+		QueryDB = (Button) mRelativeLayout.findViewById(R.id.QueryDB);
 		
 		title = (EditText) mRelativeLayout.findViewById(R.id.editTextTitle);
 		firstName = (EditText) mRelativeLayout.findViewById(R.id.editTextFirstName);
 		surname = (EditText) mRelativeLayout.findViewById(R.id.editTextSurname);
 		dob = (EditText) mRelativeLayout.findViewById(R.id.editTextDob);
 		nhsNum = (EditText) mRelativeLayout.findViewById(R.id.editTextNhsNum);
-		mh = (EditText) mRelativeLayout.findViewById(R.id.editTextMH);
+		bloodGroup = (EditText) mRelativeLayout.findViewById(R.id.editTextBloodGroup);
 		allergies = (EditText) mRelativeLayout.findViewById(R.id.editTextAllergies);
 		
 		view.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +65,42 @@ public class DetailsFragment extends Fragment {
 			}
 		});
 		
+		QueryDB.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				//if (nhsNum!=null && isNetworkAvailable()){
+					
+					JDBC jdbc = new JDBC(nhsNum.toString());
+					
+					if(jdbc.runDB()){
+						
+						Toast.makeText(bm,"Patient records available",Toast.LENGTH_SHORT ).show();
+						
+						title.setText(jdbc.getTitle());
+						firstName.setText(jdbc.getFirstName());
+						surname.setText(jdbc.getSurname());
+						dob.setText(jdbc.getDob());
+						bloodGroup.setText(jdbc.getblood_group());
+						allergies.setText(jdbc.getAllergies());
+					
+					} else {
+						
+						Toast.makeText(bm,"Patient records not available",Toast.LENGTH_SHORT ).show();
+						Log.v("message", "no patient");
+					}
+				//}
+				
+			}
+		});
 		return mRelativeLayout;
+	}
+	
+	private boolean isNetworkAvailable() {
+	    ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+	    return activeNetworkInfo != null && activeNetworkInfo.isConnected();
 	}
 	
 	@Override
@@ -69,6 +109,7 @@ public class DetailsFragment extends Fragment {
 		super.onAttach(activity);
 		bm = (Body_Model) activity;
 	}
+	
 	
 	public void updateDatabase(){
 		
@@ -80,7 +121,7 @@ public class DetailsFragment extends Fragment {
 			patientDetails.add(surname.getText().toString());
 			patientDetails.add(dob.getText().toString());
 			patientDetails.add(nhsNum.getText().toString());
-			patientDetails.add(mh.getText().toString());
+			patientDetails.add(bloodGroup.getText().toString());
 			patientDetails.add(allergies.getText().toString());	
 			
 			

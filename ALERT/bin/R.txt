@@ -390,6 +390,7 @@ int id BtAlertHospital 0x7f090070
 int id BtAlertOnCall 0x7f090071
 int id BtClearPatient 0x7f09006f
 int id Login 0x7f09006c
+int id QueryDB 0x7f090046
 int id TV_back 0x7f090094
 int id TV_front 0x7f0900b8
 int id action_bar 0x7f090031
@@ -443,7 +444,6 @@ int id back_white_rightarm 0x7f090079
 int id back_white_rightleg 0x7f09007a
 int id beginning 0x7f09001b
 int id btCountUp 0x7f0900c6
-int id button1 0x7f090046
 int id button2 0x7f09005a
 int id buttonNoDetails 0x7f09005f
 int id buttonNumbers 0x7f0900c7
@@ -460,10 +460,10 @@ int id dropdown 0x7f09001a
 int id editMedicalHistory 0x7f090096
 int id editTextAlergies 0x7f090097
 int id editTextAllergies 0x7f090058
+int id editTextBloodGroup 0x7f090055
 int id editTextDOB 0x7f090061
 int id editTextDob 0x7f090052
 int id editTextFirstName 0x7f09004c
-int id editTextMH 0x7f090055
 int id editTextMedicalHistory 0x7f090067
 int id editTextNHSNum 0x7f090066
 int id editTextNhsNum 0x7f090044
@@ -565,12 +565,12 @@ int id textView6 0x7f0900c3
 int id textView7 0x7f0900c4
 int id textViewAlertApp 0x7f0900bc
 int id textViewAllergies 0x7f090057
+int id textViewBloodGroup 0x7f090054
 int id textViewDOB 0x7f090063
 int id textViewDatabaseResults 0x7f090095
 int id textViewDetails 0x7f09005e
 int id textViewDob 0x7f090051
 int id textViewFirstName 0x7f09004b
-int id textViewMH 0x7f090054
 int id textViewMedicalHistory 0x7f090065
 int id textViewNHSNum 0x7f090064
 int id textViewNhsNum 0x7f090043
