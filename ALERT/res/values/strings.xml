@@ -16,14 +16,17 @@
     <string name="Surname">Surname</string>
     <string name="DOB">DOB</string>
     <string name="ALERT_APP">ALERT_APP</string>
-     <string name="TV_front">Indicate damage to the front of the body</string>
-      <string name="TV_back">Indicate damage to the back of the body</string>
+    <string name="TV_front">Indicate damage to the front of the body</string>
+    <string name="TV_back">Indicate damage to the back of the body</string>
     <string name="BTqueryNHSdb">Check NHS\ndatabase</string>
     <string name="DD_add">add Patient</string>
     <string name="DD_clear">clear roster</string>
     <string name="Alert_Hospital">Alert\nHospital</string>
     <string name="Alert_OnCall">Alert\nOnCall</string>
-     <string name="tv_roster">Active patient roster</string>
+    <string name="tv_roster">Active patient roster</string>
+    <string name="phoneNumEntry">Enter Number :</string>
+    <string name="MessageEntry">Enter Message :</string>
+    <string name="buttonSend">Send</string>
     
 
 </resources>

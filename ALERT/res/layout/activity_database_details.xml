@@ -45,7 +45,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    
+                    android:maxLines="1" 
+    				android:maxLength="10" 
                     android:layout_span="1" >
 
                     <requestFocus />
@@ -88,7 +89,10 @@
                     android:id="@+id/editTextTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_span="1" >
+                    android:layout_span="1" 
+                    android:inputType="textPersonName"
+                    android:maxLines="1" 
+    				android:maxLength="10" >
                 </EditText>
             </TableRow>
 
@@ -111,7 +115,11 @@
                     android:id="@+id/editTextFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_span="1" >
+                    android:layout_span="1"
+                    android:maxLines="1" 
+    				android:maxLength="15"
+    				android:ellipsize="end"
+    				android:inputType="textPersonName" >
                 </EditText>
             </TableRow>
 
@@ -134,7 +142,11 @@
                     android:id="@+id/editTextSurname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_span="1" >
+                    android:layout_span="1" 
+                    android:maxLines="1" 
+    				android:maxLength="10"
+    				android:ellipsize="end" 
+    				android:inputType="textPersonName" >
                 </EditText>
             </TableRow>
 
@@ -157,7 +169,8 @@
                     android:id="@+id/editTextDob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_span="1" >
+                    android:layout_span="1" 
+                    android:inputType="date">
                 </EditText>
             </TableRow>
 

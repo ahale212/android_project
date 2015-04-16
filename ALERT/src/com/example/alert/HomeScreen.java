@@ -32,7 +32,7 @@ public class HomeScreen extends ActionBarActivity {
 	List<String> listDataHeader;
 	HashMap<String, List<String>> listDataChild;
 
-	private Button addPatient, clearPatients;
+	private Button addPatient, clearPatients, alertOnCall;
 
 	public HomeScreen() {
 
@@ -81,6 +81,19 @@ public class HomeScreen extends ActionBarActivity {
 			}
 		});
 
+		alertOnCall = (Button) findViewById(R.id.BtAlertOnCall);
+		
+		alertOnCall.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent openSMS = new Intent("android.intent.action.SMS");
+				
+				startActivity(openSMS);
+
+			}
+		});
 	}
 
 	private void ExpandableListView() {
