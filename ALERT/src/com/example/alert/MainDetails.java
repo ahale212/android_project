@@ -10,9 +10,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
-
+/**
+ * this is the class for the SQLite and database details
+ * @author adamhale
+ *
+ */
 public class MainDetails {
-
+	//declare constants
 	public static final String KEY_ROWID = "_id";
 	public static final String KEY_TITLE = "title";
 	public static final String KEY_FIRSTNAME = "firstName";
@@ -25,7 +29,6 @@ public class MainDetails {
 	public static final String KEY_EMAILADDRESS = "email_address";
 	public static final String KEY_HOSPITALNUMBER = "hospital_number";
 	public static final String KEY_USER_PASSWORD = "password";
-	
 	public static final String KEY_counthead 			= "counthead";
 	public static final String KEY_countBackhead 		= "countBackhead";
 	public static final String KEY_countneck 			= "countneck";
@@ -42,11 +45,11 @@ public class MainDetails {
 	public static final String KEY_countBackrightleg 	= "countBackrightleg";
 	public static final String KEY_countleftleg 		= "countleftleg";
 	public static final String KEY_countBackleftleg 	= "countBackleftleg";
-
 	private static final String DATABASE_NAME = "MainDetailsDb";
 	private static final String DATABASE_TABLE = "peopleTable";
 	private static final String DATABASE_USERS = "userTable";
 	private static final int DATABASE_VERSION = 1;
+	
 	
 	private String[] keys_UserDetails = {KEY_USERID, KEY_FIRSTNAME, KEY_SURNAME, KEY_EMAILADDRESS, KEY_HOSPITALNUMBER, KEY_USER_PASSWORD};
 	private String[] keys_Details = {KEY_ROWID,KEY_TITLE,KEY_FIRSTNAME,KEY_SURNAME,KEY_DOB,KEY_NHSNUM,KEY_BLOOD_TYPE,KEY_ALLERGIES};
@@ -57,7 +60,11 @@ public class MainDetails {
 	private DbHelper ourHelper;
 	private final Context ourContext;
 	private SQLiteDatabase ourDatabase;
-
+/**
+ * method for creating tables for databases
+ * @author adamhale
+ *
+ */
 	private static class DbHelper extends SQLiteOpenHelper {
 
 		
@@ -71,6 +78,7 @@ public class MainDetails {
 		public void onCreate(SQLiteDatabase db) {
 			
 			try{
+				//create the table if it doesn't already exist
 			db.execSQL("CREATE TABLE IF NOT EXISTS " + DATABASE_TABLE + " ( "  
 					
 					+ KEY_ROWID 			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -100,6 +108,7 @@ public class MainDetails {
 					+ KEY_countBackleftleg  + " INTEGER NOT NULL);"
 					);
 			
+			//create the table if it doesn't already exist
 			db.execSQL("CREATE TABLE IF NOT EXISTS " + DATABASE_USERS + " ( "  
 					
 					+ KEY_USERID 			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -110,11 +119,14 @@ public class MainDetails {
 					+ KEY_USER_PASSWORD		+ " TEXT NOT NULL);"
 					);
 			} catch (Exception e){
-				
+				//log message for debugging
 				Log.v("MyApp", "exception in forming the database");
 			}
 		}
 
+		/**
+		 * method to drop table if it already exists
+		 */
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			// TODO Auto-generated method stub
@@ -132,7 +144,9 @@ public class MainDetails {
 		ourDatabase = ourHelper.getWritableDatabase();
 		return this;
 	}
-	
+	/**
+	 * method to closer the database helper
+	 */
 	public void close() {
 		ourHelper.close();
 	}
@@ -143,6 +157,9 @@ public class MainDetails {
 		return ourDatabase.delete(DATABASE_TABLE, KEY_ROWID +" = " + keyVal, null) > 0;
 	}
 	
+	/**
+	 * method to delete all 
+	 */
 	public void deleteAll()
 	{
 		ourDatabase.delete(DATABASE_TABLE,null,null);

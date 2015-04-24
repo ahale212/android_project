@@ -12,6 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * class for the log in page
+ * @author adamhale
+ *
+ */
 public class Login extends ActionBarActivity {
 	// initialise vars
 	private EditText password, username;

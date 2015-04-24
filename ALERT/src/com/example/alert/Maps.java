@@ -52,7 +52,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-
+/**
+ * this is the class for the maps within the App
+ * @author adamhale
+ *
+ */
 public class Maps extends FragmentActivity {
 
 	private static final int GPS_ERRORDIALOG_REQUEST = 9001;
@@ -161,7 +165,7 @@ public class Maps extends FragmentActivity {
 		}
 		return (mmMap != null);
 	}
-
+	
 	private void goToLocation(double lat, double lng, float defaultZoom) {
 		LatLng ll = new LatLng(lat, lng);
 		CameraUpdate update = CameraUpdateFactory

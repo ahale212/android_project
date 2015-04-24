@@ -25,13 +25,18 @@ import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ExpandableListView.OnGroupCollapseListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.Toast;
-
+/**
+ * class for the home screen - user can clear the patient roster, add new patients, send email and also send SMS from this screen
+ * @author adamhale
+ *
+ */
 public class HomeScreen extends ActionBarActivity {
-
+//declare vars
 	int patient_rec;
 	int TopId;
 	boolean messageSent;
 	private String HOSPITAL_NUMBER;
+	
 	private String [] EMAIL_ADDRESS;
 	private int[] BUTTON_IDS = {R.id.BtAddPatient, R.id.BtClearPatient, R.id.BtAlertOnCall, R.id.BtAlertHospital};
 

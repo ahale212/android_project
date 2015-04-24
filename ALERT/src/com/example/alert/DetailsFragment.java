@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -72,24 +73,33 @@ public class DetailsFragment extends Fragment {
 				
 				//if (nhsNum!=null && isNetworkAvailable()){
 					
-					JDBC jdbc = new JDBC(nhsNum.toString());
-					
-					if(jdbc.runDB()){
+				JDBC jdbc = new JDBC();
+				
+				jdbc.testDB();
+				
+				
+					Patients patients = new Patients();
+					Toast.makeText(bm,"Patient records available",Toast.LENGTH_SHORT ).show();
+						if(jdbc.runDB()){
+							
 						
-						Toast.makeText(bm,"Patient records available",Toast.LENGTH_SHORT ).show();
+						title.setText(patients.getTitle());
+						firstName.setText(patients.getFirstName());
+						surname.setText(patients.getSurname());
+						dob.setText(patients.getDob());
+						bloodGroup.setText(patients.getblood_group());
+						allergies.setText(patients.getAllergies());
+					}
 						
-						title.setText(jdbc.getTitle());
-						firstName.setText(jdbc.getFirstName());
-						surname.setText(jdbc.getSurname());
-						dob.setText(jdbc.getDob());
-						bloodGroup.setText(jdbc.getblood_group());
-						allergies.setText(jdbc.getAllergies());
-					
-					} else {
+						if (android.os.Build.VERSION.SDK_INT > 9) {
+						    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+						    StrictMode.setThreadPolicy(policy);
+						}
+					/*} else {
 						
 						Toast.makeText(bm,"Patient records not available",Toast.LENGTH_SHORT ).show();
 						Log.v("message", "no patient");
-					}
+					}*/
 				//}
 				
 			}
