@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@drawable/overall_background">
+
+    <Button
+        android:id="@+id/BtAddPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/DD_add" />
+    
+    <Button
+        android:id="@+id/BtClearPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/DD_clear" />
+
+    <Button
+        android:id="@+id/BtAlertHospital"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:text="@string/Alert_Hospital"/>
+
+    <Button
+        android:id="@+id/BtAlertOnCall"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:text="@string/Alert_OnCall" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/BtAlertOnCall"
+        android:layout_below="@id/BtAddPatient"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/layout_border"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/active_patients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/tv_roster" />
+
+        <ExpandableListView
+            android:id="@+id/expandablePatientList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layout_border"
+            android:visibility="invisible" >
+        </ExpandableListView>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Naming all the strings to avoid hardcoding -->
     <string name="app_name">ALERT</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Login">Login</string>
+    <string name="Password">Password</string>
+    <string name="UserID">UserID</string>
+    <string name="WelcomeToALERT">ALERT</string>
+    <string name="Details">Details</string>
+    <string name="Search">Search</string>
+    <string name="Title">Title</string>
+    <string name="FirstName">FirstName</string>
+    <string name="Surname">Surname</string>
+    <string name="DOB">DOB</string>
+    <string name="ALERT_APP">ALERT_APP</string>
+    <string name="TV_front">Indicate damage to the front of the body</string>
+    <string name="TV_back">Indicate damage to the back of the body</string>
+    <string name="BTqueryNHSdb">Check NHS\ndatabase</string>
+    <string name="DD_add">add Patient</string>
+    <string name="DD_clear">clear roster</string>
+    <string name="Alert_Hospital">Find\nHospitals</string>
+    <string name="Alert_OnCall">Alert\nOnCall</string>
+    <string name="tv_roster">Active patient roster</string>
+    <string name="phoneNumEntry">Enter Number :</string>
+    <string name="MessageEntry">Enter Message :</string>
+    <string name="buttonSend">Send</string>
+    <string name="newUser">Create New User</string>
+    <string name="TV_whiteMarker">Undamaged</string>
+    <string name="TV_amberMarker">minor damage</string>
+    <string name="TV_redMarker">severe damage</string>
+
+    <integer name="google_play_services_version">7095000</integer>
+
+    <string name="title_activity_maps">Maps</string>
+    <string name="title_activity_create_user">CreateUser</string>
 
 </resources>
